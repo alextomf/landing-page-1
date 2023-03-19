@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuerteventura</title>
+
+    <style>
+      div {
+        display: block;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #0768a9;
+      }
+
+      h1 {
+        font-size: 42px;
+        font-weight: 600;
+        border: 2px solid #0768a9;
+        border-radius: 4px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      p,
+      section {
+        display: block;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: justify;
+      }
+
+      p {
+        line-height: 25px;
+      }
+
+      section {
+        line-height: 30px;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        color: #ffffff;
+        background: #0768a9;
+        font-size: 35px;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        transition: all 200ms ease;
+        box-shadow: 5px 5px 10px rgb(142, 139, 73);
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: #0768a9;
+        background: #ffffff;
+        border: 1px solid #0768a9;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 500px;
+        border-radius: 30px;
+        border: 1px #ffffff solid;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+      }
+
+      li {
+        display: inline-block;
+        margin: 0 3px;
+      }
+
+      .main {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 10px auto;
+        padding: 15px 30px;
+        width: 55%;
+        background: linear-gradient(to bottom, #ffffff, #0768a9, #ffcc00);
+        border-radius: 10px;
+      }
+
+      .footer {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        padding: 20px;
+        color: #0768a9;
+        font-weight: bolder;
+        text-decoration: none;
+      }
+
+      .info:hover {
+        text-decoration: underline;
+      }
+
+      .media {
+        width: 16px;
+        height: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Fuerteventura</h1>
+
+      <h2>The perfect watersport spot</h2>
+
+      <hr />
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/304/original/fuerteventura-sotavento-strand.jpg?1669391919"
+        alt="Playa de Sotavento"
+      />
+      <hr />
+
+      <section>
+        <em>
+          <strong>Fuerteventura</strong> is the second biggest island in the
+          archipelago of <strong> the Canary Islands</strong>. It's 210km long
+          with more than 340km of coastline. Known for its beautiful, white sand
+          beaches, highly recommended for everyone keen on watersports like
+          windsurfing, kitesurfing or scuba diving.
+        </em>
+      </section>
+
+      <p>
+        The island is on the same latitude as Florida and Mexico and
+        temperatures here rarely fall below 18°C or rise above 24°C. <br />
+        <strong>
+          What really stops you from booking and enjoying your holidays life on
+          the best beaches in Europe?
+        </strong>
+      </p>
+      <a
+        href="https://www.hellocanaryislands.com/fuerteventura/"
+        alt="Turismo de Canarias"
+        target="_blank"
+        class="info"
+        >More info</a
+      >
+      <button>Book your trip</button>
+
+      <p class="footer">Created by Alex Tom using HTML5, CSS3 & JS</p>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/alextomf/" target="_blank">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/323/original/linkedin_logo.png?1669418918"
+              alt="LinkedIn"
+              class="media"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/alex_tom_f/" target="_blank">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/325/original/Instagram_logo_2022.svg.png?1669419035"
+              alt="Instagram"
+              class="media"
+            />
+          </a>
+        </li>
+      </ul>
+
+      <script>
+        function bookTrip() {
+          let name = prompt("What is your name?");
+          let email = prompt("What is your email?");
+          let trip = prompt(
+            "What activity would you like to book? (Windsurfing, kitesurfing or scuba diving)"
+          );
+          trip = trip
+            .toLocaleLowerCase()
+            .trim()
+            .replace("scuba diving", "diving");
+
+          if (
+            trip === "windsurfing" ||
+            trip === "kitesurfing" ||
+            trip === "diving"
+          )
+            alert(`${name} , we will contact you within 2 hours. 😎`);
+          else {
+            alert(`${name} , do you really want to go to Fuerteventura? 🙁`);
+          }
+        }
+
+        let bookTripButton = document.querySelector("button");
+        bookTripButton.addEventListener("click", bookTrip);
+      </script>
+    </div>
+  </body>
+</html>
